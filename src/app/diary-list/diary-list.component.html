@@ -1,0 +1,26 @@
+<div class="diary-list-container">
+  <button class="add-entry-btn" (click)="goToDiaryEntryForm()">Добавить запись</button>
+  <button class="add-entry-btn" routerLink="/dashboard">Профиль</button>
+  <div *ngFor="let entry of diaryEntries" class="diary-entry-item">
+    <div class="entry-items" (click)="goToEntry(entry.id)">
+    <div class="diary-entry-info">
+      <div class="diary-entry-date">
+        <p>Время создания: {{ entry.date.toDate() | date:'d MMMM y HH:mm' }}</p>
+      </div>
+      <div class="diary-entry-text" [innerHTML]="truncateText(entry.text)"></div>
+
+    </div>
+
+    <div *ngIf="entry.imageUrl" class="diary-entry-image-container">
+      <img [src]="entry.imageUrl" alt="Diary Entry Image" class="diary-entry-image">
+    </div>
+    </div>
+    <button [routerLink]="['/edit-editor', entry.id]" class="edit-btn">Обновить</button>
+    <button (click)="deleteEntry(entry.id)" class="delete-btn">Удалить</button>
+  </div>
+  <p *ngIf="!checkEntries">Записи отсутствуют</p>
+  <div class="loading" *ngIf="loading">Loading...</div>
+
+  <div (window:scroll)="onScroll()"></div>
+
+</div>

@@ -1,0 +1,40 @@
+<div class="diary-container">
+        <p>Регистрация </p>
+        <!-- Email input -->
+        <div class="formGroup">
+          <input
+            type="email"
+            class="formControl"
+            placeholder="Email"
+            #userEmail
+            required
+          />
+        </div>
+        <!-- Password input -->
+        <div class="formGroup">
+          <input
+            type="password"
+            class="formControl"
+            placeholder="Пароль"
+            #userPwd
+            required
+          />
+        </div>
+        <br>
+        <div>
+          <button
+            type="submit"
+            color="primary"
+            class="buttons"
+            (click)="diaryFirebaseService.Register(userEmail.value, userPwd.value)">
+            Register
+          </button>
+        </div>
+        <div class="redirectToLogin">
+          <p>
+            Уже есть аккаунт?
+            <a class="redirect" routerLink="/sign-in">Войти</a>
+            </p>
+        </div>
+</div>
+

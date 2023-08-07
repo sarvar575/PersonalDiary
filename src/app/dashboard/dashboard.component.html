@@ -1,0 +1,14 @@
+<div class="diary-container">
+  <button class="buttons" routerLink="/entries">Записи</button>
+  <button class="buttons" (click)="diaryFirebaseService.Logout()" >LogOut</button>
+<div class="container-fluid">
+        <div>
+          <h1 class="h2">User Profile</h1>
+        </div>
+        <div *ngIf="diaryFirebaseService.UserData as user">
+                <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+                <p>User ID: <strong>{{user.uid}}</strong></p>
+                <p>Email: <strong>{{user.email}}</strong></p>
+        </div>
+</div>
+</div>

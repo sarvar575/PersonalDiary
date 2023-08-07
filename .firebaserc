@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "personaldiary-b3fac": {
+      "hosting": {
+        "personal-diary": [
+          "personaldiary-b3fac"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "personaldiary-b3fac"
+  }
+}

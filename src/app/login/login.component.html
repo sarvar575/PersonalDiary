@@ -1,0 +1,23 @@
+
+<div class="diary-container">
+        <div class="formGroup">
+          <input type="text" class="formControl" placeholder="Email" #userName required>
+        </div>
+        <div class="formGroup">
+          <input type="password" class="formControl" placeholder="Пароль" #userPassword required>
+        </div>
+        <br>
+        <div>
+          <button
+            class="buttons"
+            (click)="diaryFirebaseService.Login(userName.value, userPassword.value)">
+            Войти
+          </button>
+        </div>
+        <div>
+          <p>Еще нет аккаунта?
+            <a
+              routerLink="/sign-up"
+              class="link-danger">Регистрация</a></p>
+        </div>
+</div>
